@@ -130,7 +130,7 @@
     </main>
     <footer class="mx-auto flex flex-col text-center py-4 space-y-2">
         <span x-data="{ year: '' }"
-            x-init="$refs.date.innerText = '© 2023  -' + new Date().getFullYear(); year = new Date().getFullYear();">
+            x-init="$refs.date.innerText = '© ' + new Date().getFullYear(); year = new Date().getFullYear();">
             <span x-ref="date"></span> || Made with 💖 by <a
                 class="hover:text-indigo-500 decoration-indigo-600 hover:underline hover:underline-offset-4"
                 href="https://github.com/praizjosh/" target="_blank">Josh

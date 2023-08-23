@@ -12,13 +12,15 @@
     <title>Document</title>
 </head>
 
-<body class="w-full p-4 md:w-[750px] mx-auto bg-gray-50 p-4">
+<body class="w-full p-4 md:w-[750px] mx-auto bg-gray-50 p-8">
     <header class="bg-white mt-8 px-8 py-4 shadow rounded-t">
-        <h1 class="text-center font-medium text-2xl text-blue-600">Task Tracker</h1>
+        <h1 class="text-center font-medium text-3xl text-blue-600">Task Tracker</h1>
+        <div class="mb-2 mt-8">
+            <hr />
+        </div>
     </header>
-    <hr />
-    <main class="bg-white">
-        <div x-data="todoList" class="mb-4 py-4 px-8 shadow-md rounded-b">
+    <main class=" bg-white p-4 shadow-md rounded-b">
+        <div x-data="todoList" class="mb-4 py-4 px-8">
             <div class="flex flex-col space-y-4  md:space-y-0 md:space-x-2 md:flex-row justify-between items-center">
                 <div class="w-full md:w-3/5">
                     <div>
@@ -28,8 +30,8 @@
                     </div>
                 </div>
                 <div class="w-full space-x-2 md:w-2/5 flex justify-evenly items-center">
-                    <button @click="addTodo" class=" w-full py-2 px-4 bg-blue-600
-                        hover:bg-blue-700 text-white rounded-md">
+                    <button @click="addTodo" class=" w-full py-2 px-4 bg-indigo-600
+                        hover:bg-indigo-700 text-white rounded-md">
                         Add Item
                     </button>
 
@@ -128,7 +130,7 @@
                 </div>
             </div>
     </main>
-    <footer class="mx-auto flex flex-col text-center py-4 space-y-2">
+    <footer class="mx-auto flex flex-col text-center py-8 space-y-2">
         <span x-data="{ year: '' }"
             x-init="$refs.date.innerText = '© ' + new Date().getFullYear(); year = new Date().getFullYear();">
             <span x-ref="date"></span> || Made with 💖 by <a

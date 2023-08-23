@@ -29,15 +29,18 @@
                 </div>
                 <div class="w-full space-x-2 md:w-2/5 flex justify-evenly items-center">
                     <button @click="addTodo" class=" w-full py-2 px-4 bg-blue-600
-                        hover:bg-blue-700 text-white rounded-md">Add
-                        Item</button>
+                        hover:bg-blue-700 text-white rounded-md">
+                        Add Item
+                    </button>
 
                     <button x-model="todoItem" @click="clearAllTodos"
-                        class="w-full py-2 px-4 bg-pink-600 hover:bg-pink-700 text-white rounded-md">Clear</button>
+                        class="w-full py-2 px-4 bg-pink-600 hover:bg-pink-700 text-white rounded-md">
+                        Clear
+                    </button>
                 </div>
             </div>
 
-            <div x-show="open" x-transition class="py-8 ">
+            <div x-show="open" x-transition class="py-8">
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
@@ -45,7 +48,7 @@
                                 <th scope="col" class="p-4">
                                     <div class="flex items-center">
                                         <input id="checkbox-all-search" type="checkbox"
-                                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                            class="w-4 h-4 text-blue-600 bg-red-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                                         <label for="checkbox-all-search" class="sr-only">checkbox</label>
                                     </div>
                                 </th>
@@ -63,7 +66,7 @@
                         <tbody>
                             <template x-for="(todo, index) in newTodo">
                                 <tr :key="index" x-data="{ message: '' }"
-                                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-indigo-50 dark:hover:bg-gray-600">
                                     <td class="w-4 p-4">
                                         <div class="flex items-center">
                                             <input id="checkbox-table-search-1" type="checkbox"
@@ -125,8 +128,16 @@
                 </div>
             </div>
     </main>
-    <footer class="mx-auto text-center py-8">
-        <span x-data="{ message: '© 2023 | With ❤️ Josh' }" x-text="message"></span> Powered by <a class="hover:underline" href="https://alpinejs.dev/">Alpine.js</a>
+    <footer class="mx-auto flex flex-col text-center py-4 space-y-2">
+        <span x-data="{ year: '' }"
+            x-init="$refs.date.innerText = '© 2023  -' + new Date().getFullYear(); year = new Date().getFullYear();">
+            <span x-ref="date"></span> || Made with 💖 by <a
+                class="hover:text-indigo-500 decoration-indigo-600 hover:underline hover:underline-offset-4"
+                href="https://github.com/praizjosh/" target="_blank">Josh
+                Praise</a>
+        </span>
+        <span class="text-xs "> Powered by <a class="hover:underline" href="https://alpinejs.dev/">Alpine.js</a></span>
+
     </footer>
 
     <script>
